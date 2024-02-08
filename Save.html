@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>title</title>
+    <link rel="stylesheet" href="Save.css"> </link>
+  <body>
+    <section class="data">
+      <h1>Saving data into Database</h1>
+          <div id="ll">
+            <div class="spandiv">
+              <span>Enter Employee First Name :- </span>
+              <span>Enter Employee Last Name :- </span>
+              <span>Enter Employee Phone Number :- </span>
+              <span>Enter Employee Email Id :- </span>
+              <span>Enter Employee Salary :- </span>
+              <span>Enter Employee Password :- </span>
+            </div>
+
+            <div class="inputdiv">
+             <input type="text" placeholder="Enter first name" id="firstName">
+             <input type="text" placeholder="Enter last name" id="lastName">
+             <input type="tel" placeholder="Enter phone number" id="phoneNumber">
+             <input type="email" placeholder="Enter your email id" id="emailId">
+             <input type="text" placeholder="Enter your salary" id="salary">
+             <input type="password" placeholder="Enter your password" id="password">
+            </div>
+          </div>
+          <button onclick="saveEmp()" type="submit" id="save">Submit</button>
+    </section>
+
+  </body>
+
+  <script>
+    let saveEmp = () => {
+  var myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+
+  var raw = JSON.stringify({
+    empFirstName: document.getElementById("firstName").value,
+    empLastName: document.getElementById("lastName").value,
+    empPhNo: document.getElementById("phoneNumber").value,
+    empEmail: document.getElementById("emailId").value,
+    empSal: document.getElementById("salary").value,
+    empPwd: document.getElementById("password").value,
+  });
+
+  var requestOptions = {
+    method: "POST",
+    headers: myHeaders,
+    body: raw,
+    redirect: "follow",
+  };
+
+  fetch("http://localhost:8080/employee", requestOptions)
+    .then((response) => response.text())
+    .then((result) => console.log(result))
+    .catch((error) => console.log("error", error));
+};
+  </script>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>title</title>
+    <link rel="stylesheet" href="Save.css" />
+  </head>
+  <body>
+    <section class="data">
+      <h1>Finding data in Database based on Id</h1>
+      <section id="ll">
+        <div class="spandiv">
+          <span>Enter Employee Id to fetch single data :- </span>
+        </div>
+
+        <div class="inputdiv">
+          <input type="text" placeholder="Enter your password" id="id" />
+        </div>
+      </section>
+      <button onclick="findById()" type="submit" id="findById">findById</button>
+    </section>
+  </body>
+  <script>
+    let findById = () => {
+      var requestOptions = {
+        method: "GET",
+        redirect: "follow",
+      };
+
+      let id = document.getElementById("id").value;
+
+      fetch(`http://localhost:8080/employee?empId=${id}`, requestOptions)
+        .then((response) => response.text())
+        .then((result) => console.log(result))
+        .catch((error) => console.log("error", error));
+    };
+  </script>
+</html>

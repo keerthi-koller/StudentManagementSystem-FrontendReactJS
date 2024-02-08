@@ -1,0 +1,94 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+#section1 {
+  position: sticky;
+  top: 0px;
+}
+
+#section1 h1 {
+  text-align: center;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  color: white;
+  background-color: cadetblue;
+  text-shadow: 10px 10px 0px rgba(110, 78, 78, 0.39);
+}
+
+body {
+  background-color: aliceblue;
+}
+
+#buttons {
+  width: 100%;
+  height: 40px;
+  background-color: cadetblue;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#buttons a{
+  text-decoration: none;
+  color: white;
+}
+
+.data {
+  background-color: pink;
+  margin: 50px 20% 200px 20%;
+  border-radius: 20px;
+  box-shadow: 10px 10px 20px rgb(206, 196, 196);
+  border: 3px solid rgb(235, 21, 167);
+}
+
+.data h1 {
+  font-size: 45px;
+  color: purple;
+  text-align: center;
+  text-shadow: 3px 2px 5px rgb(255, 255, 255);
+}
+
+.data #ll {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.spandiv span {
+  display: block;
+  width: 400px; 
+  line-height: 40px;
+  text-align: center;
+  margin: 20px auto;
+  font-size: 20px;
+}
+
+.inputdiv input {
+  display: block;
+  width: 400px;
+  height: 40px;
+  padding-left: 20px;
+  margin: 20px auto;
+  font-size: 18px;
+  border-radius: 5px;
+  border: 1px solid purple;
+}
+
+.data button {
+  margin: 20px 40%;
+  width: 200px;
+  height: 35px;
+  border-radius: 10px;
+  border: none;
+  font-size: 23px;
+  font-weight: bold;
+  text-shadow: 9px 6px 3px black;
+  color: bisque;
+  background-color: cadetblue;
+  box-shadow: 2px 5px 10px rgb(116, 61, 61);
+}
